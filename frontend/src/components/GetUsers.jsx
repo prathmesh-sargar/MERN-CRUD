@@ -11,7 +11,7 @@ const GetUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/getall");
+        const response = await axios.get("https://mern-crud-backend-fbyg.onrender.com/api/getall");
         if (response.status === 200) {
           setUsers(response.data.user || []);
           setLoading(false);
