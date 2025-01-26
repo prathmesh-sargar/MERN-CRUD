@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -16,7 +16,7 @@ const AddUser = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:8000/api/create", data);
+      const response = await axios.post("https://mern-crud-backend-fbyg.onrender.com/api/create", data);
 
       if (response.status === 201) {
         toast.success(response.data.message || "User added successfully!");

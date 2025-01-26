@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import toast  from "react-hot-toast";
-import UpdateUser from "./UpdateUser";
 
 const GetUsers = () => {
   const [users, setUsers] = useState([]);
@@ -35,7 +34,7 @@ const GetUsers = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       try {
-        const response = await axios.delete(`http://localhost:8000/api/delete/${id}`);
+        const response = await axios.delete(`https://mern-crud-backend-fbyg.onrender.com/api/delete/${id}`);
         if (response.status === 201) {
           toast.success("User deleted successfully!");
           setUsers(users.filter((user) => user._id !== id)); // Update state after deletion

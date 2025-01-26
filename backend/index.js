@@ -2,6 +2,8 @@ import express from 'express'
 import mongoose from 'mongoose';
 import cors from 'cors'
 import router from './routes/userRoute.js';
+import dotenv from 'dotenv'
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,7 +13,7 @@ app.use(express.json());
 
 // Database Is Connected Here 
 // mongodb+srv://prathmeshtech27:prathmeshtech27@cluster0.jsvdd.mongodb.net/
-mongoose.connect("mongodb+srv://prathmeshtech27:4EbxsXoHCVFew7u0@cluster0.m7qx2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
     console.log("DB is connected");
 

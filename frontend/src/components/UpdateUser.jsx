@@ -27,7 +27,7 @@ const UpdateUser = () => {
  useEffect(()=>{
   console.log("Use Params ID ",id);
   if(id){
-    axios.get(`http://localhost:8000/api/getuser/${id}`)
+    axios.get(`https://mern-crud-backend-fbyg.onrender.com/api/getuser/${id}`)
   .then((Response)=>{
     setUser(Response.data.user);
     reset(Response.data.user);
