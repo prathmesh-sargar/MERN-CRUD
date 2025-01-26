@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import router from './routes/userRoute.js';
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 3000;
 
 // middleware API's 
 app.use(cors());
